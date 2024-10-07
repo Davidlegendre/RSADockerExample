@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\david\\Documents\\Repos\\local\\OcelotProject\\ClienteService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB984527-53C9-4A67-813A-74A88AA510C0}|ClienteService\\ClienteService.csproj|c:\\users\\david\\documents\\repos\\local\\ocelotproject\\clienteservice\\clienteservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DB984527-53C9-4A67-813A-74A88AA510C0}|ClienteService\\ClienteService.csproj|solutionrelative:clienteservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB984527-53C9-4A67-813A-74A88AA510C0}|ClienteService\\ClienteService.csproj|c:\\users\\david\\documents\\repos\\local\\ocelotproject\\clienteservice\\clienteservice\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB984527-53C9-4A67-813A-74A88AA510C0}|ClienteService\\ClienteService.csproj|solutionrelative:clienteservice\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\david\\Documents\\Repos\\local\\OcelotProject\\ClienteService\\ClienteService\\appsettings.json",
+              "RelativeDocumentMoniker": "ClienteService\\appsettings.json",
+              "ToolTip": "C:\\Users\\david\\Documents\\Repos\\local\\OcelotProject\\ClienteService\\ClienteService\\appsettings.json",
+              "RelativeToolTip": "ClienteService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAACmAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-07T02:36:58.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\david\\Documents\\Repos\\local\\OcelotProject\\ClienteService\\ClienteService\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "ClienteService\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\david\\Documents\\Repos\\local\\OcelotProject\\ClienteService\\ClienteService\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "ClienteService\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:48:03.383Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

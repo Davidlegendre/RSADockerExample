@@ -1,0 +1,38 @@
+services:
+  auth-service:
+    build: ./AuthService
+    container_name: auth-service
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - JWT__PrivateKey=MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD3BKN2QTBREE/p\rx5CxFHeR9iRTel1ly2WbD1JqVir4R4o/2X3L8AasPn2fyyLj3HP9R2j4aIMwN3p/\rjSeoxTqWNHrPN/iC5JyhklO0jXrVmdGuxsPzQ9EJRsFLg3MAdnk1ItE6jseqLKjE\r4V3aDXjjmQWXnTxend5GuAL17n8g3239R/U6hfcRRqjf5tnLt+1NjWaIrizL+ksN\ru/Oql3/nv6ijJcdGxDUASqzD6SpAa4X/5yUuM9i5HQil9qtPRGtkDIBz9yZcuPdC\rUxKJ2VUIP9o5bTJx3TgvhuC95Yf5adBDyKI7HJvhJkL6+d+ZyjhInc3sFUEuV0lb\rJHhic4aVAgMBAAECggEAexDxi3oA43I4DiXh/YdP5wV1pa1iGNQUBAPHMLlLYTTr\rONJXrSIhgPEFT3Y6JMHxe693KcOQEJajTib6KkhQ3wK4aMLe6f+R1aF8WIjgOMkQ\rwX2/pFQWMgPxS3jq88EStBlrmjwGV882KhiJ1Jg/sUzMj3PD3vPSCPOmbfZrmekc\rXmCQFxwRo0QZcP9VFtJYW3ja4DasZELljN9uwam7cgejmmsbm4lEGIA/e423ESbX\rYumlfp3qG+Db41I27ch43UclfIhwarmGdXILo53nlHeQJDS483Gx67JKDsLvnvIF\rTusfUAUOaWqM6Dsit7q841Bu133JaT9EoLjte//FhQKBgQD/ZIDBUP5SM+iUaRX/\r397W2z9zYsN4ojccdAxgqjTFDv/6TKMS3UyKVhd8BldADuIucLlGrVKVYpzXWMYM\rfX5NX+gtkCBw2gD1dMnU9s3cS9hVlA4Ro46JKtMX0TcdOsofwM+OUv7EyZftdOGH\rxmK2Iqn2myVkYDYSxD14bzWNgwKBgQD3mwlnfVRsjTlZebPxUu5xm/+i3mY73e9L\rTGDx3ukngIri0Fyplkjio9SuYtCQN48HrqiT2h4DanyGaqFTVsjlQsOK5ayJD8ML\rhntIpdeQ5b8FaYi0fvjf2o7Xpgnbj/vGLOWJlWV9uOvoaMt5qptOQms4H5N8kBcl\ro21WVFg4BwKBgCzXha/ru6vNR3H/fYhe026gMmTdG3sr6EdLrPywBfHvr0xQdnWS\re6Tyds8lAd7Sfi4vRqi9N/nYxbcd9DAvPKTzSP3vB3MpI+/1IJcO+phKjOKBy3KX\raCh3Z3cQGgA82U53+TmBIxCEYPOliQ/g6mYWcgdFuGwGZJgo8q4ZwKpnAoGBALMV\rBvA6zVzVp6z3QRZBjQPOeE4r3HVgRzqGu3c0ah2P8uOpH9voPj7tj12xSneEN4au\r5G5LS3ndAsOVS6kjE5n9d8B17RwUslUbpv8cM5UxFb+sXJtvWkFNqhJ+nJKYyNjE\rkB+6VfVgUf9+C+yrYDhyAWpOLDXjYVpvoRzXVBbxAoGAXxWCPBfyg8SIM7xuKonS\rR8J22wBRBwIz8zNw9y/Ak/vbDm34X3IIHCayV2BmXfvUrzMqryPDtonCDLKM/b3Y\rlM+BuWXhdvfV/geacGZzQUGyGx3KUrD+cct6oAogo8r0m2JLGS/a6WqCBHdjMeUA\rzpRUbdCbjA+KxQQ/EiLuD4U=
+      - JWT__Issuer=https://auth-service
+      - JWT__Audience=https://api-service
+      - JWT__TokenLifetimeMinutes=60
+
+  admin-service:
+    build: ./AdminService
+    container_name: admin-service
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - JWT__PublicKey=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9wSjdkEwURBP6ceQsRR3\rkfYkU3pdZctlmw9SalYq+EeKP9l9y/AGrD59n8si49xz/Udo+GiDMDd6f40nqMU6\rljR6zzf4guScoZJTtI161ZnRrsbD80PRCUbBS4NzAHZ5NSLROo7HqiyoxOFd2g14\r45kFl508Xp3eRrgC9e5/IN9t/Uf1OoX3EUao3+bZy7ftTY1miK4sy/pLDbvzqpd/\r57+ooyXHRsQ1AEqsw+kqQGuF/+clLjPYuR0IpfarT0RrZAyAc/cmXLj3QlMSidlV\rCD/aOW0ycd04L4bgveWH+WnQQ8iiOxyb4SZC+vnfmco4SJ3N7BVBLldJWyR4YnOG\rlQIDAQAB
+      - JWT__Issuer=https://auth-service
+      - JWT__Audience=https://api-service
+    depends_on:
+      - auth-service
+
+  cliente-service:
+    build: ./ClienteService
+    container_name: cliente-service
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - JWT__PublicKey=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9wSjdkEwURBP6ceQsRR3\rkfYkU3pdZctlmw9SalYq+EeKP9l9y/AGrD59n8si49xz/Udo+GiDMDd6f40nqMU6\rljR6zzf4guScoZJTtI161ZnRrsbD80PRCUbBS4NzAHZ5NSLROo7HqiyoxOFd2g14\r45kFl508Xp3eRrgC9e5/IN9t/Uf1OoX3EUao3+bZy7ftTY1miK4sy/pLDbvzqpd/\r57+ooyXHRsQ1AEqsw+kqQGuF/+clLjPYuR0IpfarT0RrZAyAc/cmXLj3QlMSidlV\rCD/aOW0ycd04L4bgveWH+WnQQ8iiOxyb4SZC+vnfmco4SJ3N7BVBLldJWyR4YnOG\rlQIDAQAB
+      - JWT__Issuer=https://auth-service
+      - JWT__Audience=https://api-service
+    depends_on:
+      - auth-service
